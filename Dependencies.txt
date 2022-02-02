@@ -1,0 +1,228 @@
+-----DEPENDENCY PARA MAVEN--------
+Dependencia de JUnit (TEST)
+
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>4.13.2</version>
+<scope>test</scope>
+</dependency>
+-----------------------
+Dependencia para Test de Spring
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>${spring.version}</version>
+    <scope>test</scope>
+</dependency>
+
+
+------------------------
+Dependency para LOGGER
+
+<dependency>
+<groupId>org.slf4j</groupId>
+<artifactId>slf4j-log4j12</artifactId>
+<version>1.7.30</version>
+</dependency>
+
+--------------------
+Dependency para Librerias JSON
+
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.12.5</version>
+</dependency>
+
+
+---------------------
+
+
+
+
+
+------------------
+Dependencia para XStream
+
+<dependency>
+  <groupId>com.thoughtworks.xstream</groupId>
+  <artifactId>xstream</artifactId>
+  <version>1.4.18</version>
+</dependency>
+
+-----------------
+Dependency para Spring Frame de Maven
+Propiedad Spring.version:
+
+<spring.version>5.3.14</spring.version>
+
+¡¡¡¡Para enlazar esta propiedad con las dependencias de spring-core y spring-context!!!!!:
+
+<dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-core</artifactId>
+  <version>${spring.version}</version>
+  </dependency>
+ <dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-context</artifactId>
+  <version>${spring.version}</version>
+ </dependency>
+ 
+ ///// Sin el spring.version
+ 
+ <dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-core</artifactId>
+  <version>5.3.10</version>
+  </dependency>
+ <dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-context</artifactId>
+  <version>5.3.10</version>
+ </dependency>
+
+------------------
+Dependencia para JDBC
+
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.3.11</version>
+</dependency>
+
+
+------------------
+
+Dependencia Driver para Mysql
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.27</version>
+</dependency>
+
+------------------------------
+Dependency para Spring Boot Starter Web. (Para hacer un servicio Rest. Se queda esperando hasta que reciba peticiones)
+
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>2.5.6</version>
+</dependency>
+
+------------------------------
+Dependencia para Spring Boot Starter y JDBC(MySql)
+
+	<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+
+
+--------------------
+Dependencia correcta para Spring Boot y las anotaciones correctas para ORM(Mysql)
+
+<dependency>
+ <groupId>org.springframework.boot</groupId> 
+<artifactId>spring-boot-starter-data-jpa</artifactId> 
+<version>2.5.6</version>
+ </dependency>
+
+
+ <dependency>
+ <groupId>javax.xml.bind</groupId>
+ <artifactId>jaxb-api</artifactId> 
+<version>2.3.0</version> 
+</dependency>
+
+
+-----------------------
+Dependencia para utilizar Clases de otros Proyectos!!!!
+
+<dependency>
+
+</dependency>
+
+
+------------------------------------------------------
+Dependencia para JMS con spring boot (Mensajeria)
+
+	<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-activemq</artifactId>
+                <version>2.6.2</version>
+            </dependency>
+
+
+---------------------
+Spring boot starter jackson.
+
+<dependencyManager></dependencyManager> (Para manejar dependencias y versiones desde el POM padre) -> Además, en el POM PADRE (en Properties) añadiremos una <spring.boot.version>
+y a las dependencias les agregaremos <version>${spring.boot.version}</version>
+para alinear las versiones en todos los modulos.
+
+
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-json</artifactId>
+  <version>2.6.3</version>
+</dependency>
+
+
+
+--------------------------------
+
+<!-- https://mvnrepository.com/artifact/com.ibm.mq/mq-jms-spring-boot-starter -->
+<dependency>
+    <groupId>com.ibm.mq</groupId>
+    <artifactId>mq-jms-spring-boot-starter</artifactId>
+    <version>2.6.2</version>
+</dependency>
+
+
+
+
+---------------------
+Conectarnos a Mongo desde Java
+
+<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>2.6.2</version>
+</dependency>
+
+
+
+
+------------------
+
+
+log4j.xml
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true">
+    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="out.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </layout>
+    </appender>
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </layout>
+    </appender>
+    <root>
+        <priority value="info" />
+        <appender-ref ref="consoleAppender" />
+        <appender-ref ref="fileAppender" />
+    </root>
+</log4j:configuration>
