@@ -126,7 +126,7 @@ Dependencia para Spring Boot Starter y JDBC(MySql)
 
 
 --------------------
-Dependencia correcta para Spring Boot y las anotaciones correctas para ORM(Mysql)
+Dependencia correcta para Spring Boot y las anotaciones correctas para ORM(jpa)
 
 <dependency>
  <groupId>org.springframework.boot</groupId> 
@@ -161,12 +161,16 @@ Dependencia para JMS con spring boot (Mensajeria)
 
 
 ---------------------
-Spring boot starter jackson.
 
-<dependencyManager></dependencyManager> (Para manejar dependencias y versiones desde el POM padre) -> Además, en el POM PADRE (en Properties) añadiremos una <spring.boot.version>
-y a las dependencias les agregaremos <version>${spring.boot.version}</version>
+
+<dependencyManager></dependencyManager>
+ (Para manejar dependencias y versiones desde el POM padre) -> Además, en el POM PADRE (en Properties) añadiremos una <spring.boot.version>
+y a las dependencias les agregaremos
+<version>${spring.boot.version}</version>
 para alinear las versiones en todos los modulos.
 
+
+Spring boot starter jackson.
 
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -177,6 +181,9 @@ para alinear las versiones en todos los modulos.
 
 
 --------------------------------
+
+Dependencia JMS-MQ
+
 
 <!-- https://mvnrepository.com/artifact/com.ibm.mq/mq-jms-spring-boot-starter -->
 <dependency>
